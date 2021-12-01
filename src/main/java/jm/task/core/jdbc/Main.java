@@ -1,19 +1,14 @@
 package jm.task.core.jdbc;
 
-import com.mysql.cj.Session;
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
-
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
-import jm.task.core.jdbc.util.Util;
-import org.hibernate.Transaction;
 
 public class Main {
     private static final UserService userService = new UserServiceImpl();
     private static final User user1 = new User("Ivan", "Petrov", (byte) 25);
-    private static final User user2 = new User("Anto", "Bodrov", (byte) 18);
+    private static final User user2 = new User("Anton", "Bodrov", (byte) 18);
     private static final User user3 = new User("Volodka", "Tolstov", (byte) 57);
     private static final User user4 = new User("Seregka", "Dalnov", (byte) 120);
 
