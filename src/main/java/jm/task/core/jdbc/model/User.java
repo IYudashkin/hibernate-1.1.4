@@ -1,17 +1,12 @@
 package jm.task.core.jdbc.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import javax.persistence.*;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.Objects;
-
-@Table
-
+@Entity
+@Table(name = "users")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
@@ -29,12 +24,13 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
+        return
+                "User{" +
+                        "id=" + id +
+                        ", name='" + name + '\'' +
+                        ", lastName='" + lastName + '\'' +
+                        ", age=" + age +
+                        '}';
     }
 
     public User(String name, String lastName, Byte age) {
@@ -43,8 +39,7 @@ public class User {
         this.age = age;
     }
 
-
-        public Long getId() {
+    public Long getId() {
         return id;
     }
 
